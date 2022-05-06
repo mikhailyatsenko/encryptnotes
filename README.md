@@ -1,3 +1,3 @@
-# This is ьн educational pet project
+# This is my educational pet project
 
 I'm using react-botstrap
