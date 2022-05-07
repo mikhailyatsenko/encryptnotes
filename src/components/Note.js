@@ -55,10 +55,10 @@ function Note() {
   let getNote = (event) => {
     event.preventDefault();
     let url = event.target.elements.url.value;
-    if (url === '') {
-      alert('Заполните поле');
-      return false;
-    }
+    // if (url === '') {
+    //   alert('Заполните поле');
+    //   return false;
+    // }
     sendData({"url" : url});
     // noteUrl = url;
     // window.location.href = env.url + '/' + url;
@@ -83,7 +83,7 @@ function Note() {
           <div className={formClass + " col-md-6 text-center"}>
                 <Form onSubmit={getNote}>
                   <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Control as="input" name="url" />
+                    <Form.Control as="input" name="url" required />
                   </Form.Group>
                   <Button type="submit" className="fw-light" variant="outline-dark" size="lg">Расшифровать заметку</Button>
                 </Form>
