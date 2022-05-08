@@ -3,7 +3,8 @@ import { useState } from 'react';
 import env from '../env.json';
 import { motion } from "framer-motion";
 import { Container, Row, Col, Button, Form, Spinner, Tooltip, OverlayTrigger } from 'react-bootstrap';
-
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import DoneAllIcon from '@mui/icons-material/DoneAll';
 
 function Create() {
 
@@ -12,9 +13,8 @@ function Create() {
     const [loadClass, setLoadClass] = useState('hide');
     const [errorClass, setErrorClass] = useState('hide');
     const [formClass, setFormClass] = useState('');
-    const [clipboard, setClipboard] = useState('content_copy');
+    const [clipboard, setClipboard] = useState(<ContentCopyIcon fontSize="small" />);
     const [clipboardText, setClipboardText] = useState('Скопировать ключ');
-
 
     let sendData = (obj) => {
 
@@ -62,7 +62,7 @@ function Create() {
     const copyToClipboard = () => {
       navigator.clipboard.writeText(url)
             .then(() => {
-                setClipboard('done_all');
+                setClipboard(<DoneAllIcon fontSize="small" />);
                 setClipboardText('Скопировано!');
             })
             .catch(err => {
@@ -100,7 +100,19 @@ function Create() {
               <div className={successClass + " col-md-8 text-center"}>
                 <h2 className="fw-light">Сообщение зашифровано.</h2>
                 <h2 className="fw-light mb-3">Сохраните Ваш ключ дешифровки:</h2>
-                <div className="mb-4 col-md-6 alert alert-info mx-auto"><strong>{url}</strong> <OverlayTrigger overlay={<Tooltip>{clipboardText}</Tooltip>} placement="right"><span onClick={copyToClipboard} className="material-icons clipboard">{clipboard}</span></OverlayTrigger></div>
+                <div className="mb-4 col-md-6 alert alert-info mx-auto">
+                  
+                  <strong>{url} </strong> 
+                
+                  <OverlayTrigger overlay={<Tooltip>{clipboardText}</Tooltip>} placement="right">
+                  
+                    <span onClick={copyToClipboard} className="clipboard">
+                      {clipboard}
+                    </span>
+
+                  </OverlayTrigger>
+                
+                </div>
                 <Button className="fw-light" variant="outline-dark" onClick={() => {window.location.reload()}}>Зашифровать еще одну заметку</Button>
               </div>
 

@@ -54,9 +54,9 @@ html, body, #root {
 }
 
 .clipboard {
-    cursor: pointer;
-    font-size: 20px !important;
+    color: #525252 !important;
 }
 .clipboard:hover {
-    color: #1899b3;
+    color: #000000 !important;
+    cursor: pointer;
 }
