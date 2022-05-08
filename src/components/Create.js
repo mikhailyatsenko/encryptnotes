@@ -28,7 +28,7 @@ function Create() {
         })
           .then(response => response.json())
           .then(response => {
-            console.log(response);
+            // console.log(response);
           if (response.result) {
               setLoadClass('hide');
               setSuccessClass('');
@@ -100,18 +100,18 @@ function Create() {
               <div className={successClass + " col-md-8 text-center"}>
                 <h2 className="fw-light">Сообщение зашифровано.</h2>
                 <h2 className="fw-light mb-3">Сохраните Ваш ключ дешифровки:</h2>
-                <div className="mb-4 col-md-6 alert alert-info mx-auto">
-                  
-                  <strong>{url} </strong> 
-                
-                  <OverlayTrigger overlay={<Tooltip>{clipboardText}</Tooltip>} placement="right">
-                  
-                    <span onClick={copyToClipboard} className="clipboard">
-                      {clipboard}
-                    </span>
+                <div className="mb-4 col-md-6 alert alert-info mx-auto d-flex justify-content-center">
+                  <div className="me-3">
+                    <strong>{url} </strong> 
+                  </div>
+                  <div className="clipboard" onClick={copyToClipboard}>
+                    <OverlayTrigger overlay={<Tooltip>{clipboardText}</Tooltip>} placement="top">
+                      
+                        {clipboard}
 
-                  </OverlayTrigger>
-                
+                    </OverlayTrigger>
+                  </div>
+
                 </div>
                 <Button className="fw-light" variant="outline-dark" onClick={() => {window.location.reload()}}>Зашифровать еще одну заметку</Button>
               </div>
