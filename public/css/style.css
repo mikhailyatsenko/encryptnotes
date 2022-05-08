@@ -53,6 +53,10 @@ html, body, #root {
     border: 2px solid rgb(235, 113, 113) !important;
 }
 
-.empty-text {
-    
+.clipboard {
+    cursor: pointer;
+    font-size: 20px !important;
+}
+.clipboard:hover {
+    color: #1899b3;
 }

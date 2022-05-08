@@ -2,7 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import env from '../env.json';
 import { motion } from "framer-motion";
-import { Container, Row, Col, Button, Form, Spinner } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form, Spinner, Tooltip, OverlayTrigger } from 'react-bootstrap';
+
 
 function Create() {
 
@@ -11,6 +12,9 @@ function Create() {
     const [loadClass, setLoadClass] = useState('hide');
     const [errorClass, setErrorClass] = useState('hide');
     const [formClass, setFormClass] = useState('');
+    const [clipboard, setClipboard] = useState('content_copy');
+    const [clipboardText, setClipboardText] = useState('Скопировать ключ');
+
 
     let sendData = (obj) => {
 
@@ -55,6 +59,18 @@ function Create() {
       // console.log(note);
     }
 
+    const copyToClipboard = () => {
+      navigator.clipboard.writeText(url)
+            .then(() => {
+                setClipboard('done_all');
+                setClipboardText('Скопировано!');
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
+    
+
     return (
       <motion.section 
       id="create" 
@@ -84,7 +100,7 @@ function Create() {
               <div className={successClass + " col-md-8 text-center"}>
                 <h2 className="fw-light">Сообщение зашифровано.</h2>
                 <h2 className="fw-light mb-3">Сохраните Ваш ключ дешифровки:</h2>
-                <div className="mb-4 col-md-6 alert alert-info mx-auto"><strong>{url}</strong></div>
+                <div className="mb-4 col-md-6 alert alert-info mx-auto"><strong>{url}</strong> <OverlayTrigger overlay={<Tooltip>{clipboardText}</Tooltip>} placement="right"><span onClick={copyToClipboard} className="material-icons clipboard">{clipboard}</span></OverlayTrigger></div>
                 <Button className="fw-light" variant="outline-dark" onClick={() => {window.location.reload()}}>Зашифровать еще одну заметку</Button>
               </div>
 
