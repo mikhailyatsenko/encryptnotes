@@ -50,7 +50,7 @@ function Note() {
       <Container>
         <Row className="justify-content-center">
           <div className={formClass + " text-center"}>
-            <h2 className="fw-light">Введите ключ дешифровки:</h2>
+            <h2 className="fw-light">Enter the decryption key:</h2>
           </div>
 
           <div className={formClass + " col-md-6 text-center"}>
@@ -59,13 +59,13 @@ function Note() {
                 <Form.Control as="input" name="cipher" required />
               </Form.Group>
               <Button type="submit" className="fw-light" variant="outline-dark" size="lg">
-                Расшифровать заметку
+                Decode note
               </Button>
             </Form>
           </div>
           <Spinner className={loadClass} animation="grow" variant="light" />
           <div className={noteClass + " text-center"}>
-            <h2 className="fw-light">Расшифровано. Ваша заметка:</h2>
+            <h2 className="fw-light">Deciphered. Your note:</h2>
             <div className="mb-4 col-md-6 alert alert-info mx-auto">
               <strong>"{noteText}"</strong>
             </div>
@@ -73,36 +73,36 @@ function Note() {
               className="fw-light"
               variant="outline-dark"
               onClick={() => {
-                window.location.href = env.url;
+                window.location.href = env.url + "/note";
               }}
             >
-              Расшифровать еще одну заметку
+              Decode another note
             </Button>
           </div>
           <div className={errorClass + " col-md-8 text-center"}>
-            <h2 className="fw-light">Ошибка :(</h2>
-            <h2 className="fw-light">Попробуйте снова позже</h2>
+            <h2 className="fw-light">Error :(</h2>
+            <h2 className="fw-light">Try again later</h2>
             <Button
               className="fw-light"
               variant="outline-dark"
               onClick={() => {
-                window.location.href = env.url;
+                window.location.href = env.url + "/note";
               }}
             >
-              Попробовать снова
+              Try again
             </Button>
           </div>
           <div className={noHashClass + " col-md-8 text-center"}>
-            <h2 className="fw-light">Такой ключ не найден :(</h2>
-            <h2 className="fw-light">Проверьте правильность ключа</h2>
+            <h2 className="fw-light">No such key found :( </h2>
+            <h2 className="fw-light">Check if the key is correct </h2>
             <Button
               className="fw-light"
               variant="outline-dark"
               onClick={() => {
-                window.location.href = env.url;
+                window.location.href = env.url + "/note";
               }}
             >
-              Попробовать снова
+              Try again
             </Button>
           </div>
         </Row>

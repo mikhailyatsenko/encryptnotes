@@ -11,16 +11,16 @@ function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <NavLink className="nav-link" to="/">
-                Главная
+                Home
               </NavLink>
               <NavLink className="nav-link" to="/create">
-                Создать
+                Create
               </NavLink>
               <NavLink className="nav-link" to="/note">
-                Расшифровать
+                Decode note
               </NavLink>
               <NavLink className="nav-link" to="/about">
-                О проекте
+                About
               </NavLink>
             </Nav>
           </Navbar.Collapse>
