@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,67 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+html, body, #root {
+  height: 100%;
+
+}
+
+#main a, a:hover {
+    color: inherit !important;
+    text-decoration: inherit !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.active {
+    color: red;
+}
+
+.bg-color-main {
+    background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
+}
+
+.height85 {
+    height: 85vh;
+}
+
+.btn {
+    transition: 0.7s !important;
+}
+
+.form-control {
+    line-height: 2 !important;
+    background-color: transparent !important;
+    border: 1px solid #000 !important;
+}
+
+.form-control:focus {
+    line-height: 2 !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid #000 !important;
+}
+
+.navbar-brand {
+    cursor: default;
+}
+
+.alert-info {
+    background-color: rgba(133, 187, 250, 0.478) !important;
+    border-color: #768abb !important;
+}
+
+.empty-form {
+    border: 2px solid rgb(235, 113, 113) !important;
+}
+
+.clipboard {
+    color: #525252 !important;
+}
+.clipboard:hover {
+    color: #000000 !important;
+    cursor: pointer;
 }
