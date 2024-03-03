@@ -5,14 +5,13 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Note from "./components/Note";
 import Error from "./components/Error";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
@@ -22,7 +21,7 @@ function App() {
           <Route path="/note/:noteUrl" element={<Note />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       <Footer />
     </>
   );
