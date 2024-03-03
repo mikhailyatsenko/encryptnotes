@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
 import env from "../env.json";
