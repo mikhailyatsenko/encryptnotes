@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/encryptnotes/static/css/main.08885c06.css",
-    "main.js": "/encryptnotes/static/js/main.3021e362.js",
+    "main.js": "/encryptnotes/static/js/main.f1feae40.js",
     "static/js/787.a2bf511c.chunk.js": "/encryptnotes/static/js/787.a2bf511c.chunk.js",
     "index.html": "/encryptnotes/index.html",
     "main.08885c06.css.map": "/encryptnotes/static/css/main.08885c06.css.map",
-    "main.3021e362.js.map": "/encryptnotes/static/js/main.3021e362.js.map",
+    "main.f1feae40.js.map": "/encryptnotes/static/js/main.f1feae40.js.map",
     "787.a2bf511c.chunk.js.map": "/encryptnotes/static/js/787.a2bf511c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.08885c06.css",
-    "static/js/main.3021e362.js"
+    "static/js/main.f1feae40.js"
   ]
 }
