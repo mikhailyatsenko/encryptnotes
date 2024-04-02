@@ -1,6 +1,6 @@
-# This is my educational pet project.
+# Short notes encryption service.
 
-This is a frontend for short message encryption service. Based on React, Node.js, Express.js + PostgreSQl
+Based on React, Node.js, Express.js + PostgreSQl
 
 How it works: http://encryptnotes.atwebpages.com/
 
