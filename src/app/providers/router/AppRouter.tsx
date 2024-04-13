@@ -1,5 +1,5 @@
-import { Route, Routes } from 'react-router-dom'
-import { routeConfig } from 'shared/config/routeConfig/routeConfig'
+import { Route, Routes } from 'react-router-dom';
+import { routeConfig } from 'shared/config/routeConfig/routeConfig';
 
 const AppRouter = () => {
   return (
@@ -8,7 +8,7 @@ const AppRouter = () => {
         <Route key={path} path={path} element={element} />
       ))}
     </Routes>
-  )
-}
+  );
+};
 
-export default AppRouter
+export default AppRouter;

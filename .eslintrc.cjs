@@ -3,19 +3,13 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'prettier',
-    'standard-with-typescript',
-    'plugin:react/recommended',
-  ],
+  extends: ['standard-with-typescript', 'plugin:react/recommended', 'plugin:prettier/recommended', 'prettier'],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [
-        '.eslintrc.{js,cjs}',
-      ],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
         sourceType: 'script',
       },
@@ -41,12 +35,23 @@ module.exports = {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/comma-dangle': ['error', {
-      arrays: 'always-multiline',
-      objects: 'always-multiline',
-    }],
+    'comma-dangle': 'off',
+    '@typescript-eslint/comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+        functions: 'always-multiline',
+        enums: 'always-multiline',
+        generics: 'always-multiline',
+        tuples: 'always-multiline',
+      },
+    ],
     'prefer-const': 'warn',
     indent: ['error', 2],
+    '@typescript-eslint/no-floating-promises': 'off',
   },
   settings: {
     react: {
@@ -54,4 +59,4 @@ module.exports = {
       version: 'detect',
     },
   },
-}
+};
