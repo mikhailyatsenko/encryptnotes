@@ -1,4 +1,6 @@
 import { type AxiosResponse } from 'axios';
+import { ResultCard } from 'entities/CipherCard';
+import { NoteForm } from 'entities/NoteForm';
 import { type FormEvent, useState } from 'react';
 import { instance } from 'shared/api';
 
@@ -16,7 +18,6 @@ export const CreateNote = () => {
   const createCipher = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const textarea = e.target as HTMLFormElement;
-    console.log(textarea.note);
     const note: string = textarea.note.value;
 
     instance
@@ -30,14 +31,10 @@ export const CreateNote = () => {
   };
 
   return (
-    <section id="create" className="bg-color-main height85 d-flex align-items-center">
+    <section id="create">
       <div className="container">
-        <form onSubmit={createCipher}>
-          <textarea id="note" name="note" rows={7}></textarea>
-          <button>send</button>
-        </form>
-
-        {cipher}
+        <NoteForm onSubmit={createCipher} />
+        <ResultCard value={cipher} />
       </div>
     </section>
   );

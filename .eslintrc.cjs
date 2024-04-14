@@ -52,6 +52,10 @@ module.exports = {
     'prefer-const': 'warn',
     indent: ['error', 2],
     '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/strict-boolean-expressions': [
+      'error',
+      { allowString: true, allowNullableString: true, allowNullableObject: true, allowNullableBoolean: true },
+    ],
   },
   settings: {
     react: {

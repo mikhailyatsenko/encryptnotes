@@ -1,4 +1,6 @@
 import { type AxiosResponse } from 'axios';
+import { ResultCard } from 'entities/CipherCard';
+import { CipherForm } from 'entities/CipherForm';
 import { useState } from 'react';
 
 import { type FormEvent } from 'react';
@@ -30,16 +32,12 @@ export const DecodeNote = () => {
         console.error('Request error:', error);
       });
   };
-
+  console.log(noteText);
   return (
-    <section id="decode" className="bg-color-main height85 d-flex align-items-center">
+    <section id="decode">
       <div className="container">
-        <form onSubmit={getDecodedNote}>
-          <input id="cipher" name="cipher" />
-          <button>send</button>
-        </form>
-
-        {noteText}
+        <CipherForm onSubmit={getDecodedNote} />
+        <ResultCard value={noteText} />
       </div>
     </section>
   );
