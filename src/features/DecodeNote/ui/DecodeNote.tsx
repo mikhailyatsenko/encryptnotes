@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import { type FormEvent } from 'react';
 import { instance } from 'shared/api';
+import Spinner from 'shared/ui/Spinner/Spinner';
 
 interface BackendResponse {
   note: string;
@@ -16,16 +17,19 @@ interface CipherPostData {
 
 export const DecodeNote = () => {
   const [noteText, setNoteText] = useState('');
+  const [isLoading, setIsloading] = useState(false);
 
   const getDecodedNote = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const input = e.target as HTMLFormElement;
     const cipher: string = input.cipher.value;
-    console.log(cipher);
+
+    setIsloading(true);
 
     instance
       .post<CipherPostData, AxiosResponse<BackendResponse>>('/getnote', { cipher })
       .then((response) => {
+        setIsloading(false);
         setNoteText(response.data.note);
       })
       .catch((error) => {
@@ -36,8 +40,22 @@ export const DecodeNote = () => {
   return (
     <section id="decode">
       <div className="container">
-        <CipherForm onSubmit={getDecodedNote} />
-        <ResultCard value={noteText} />
+        {noteText ? (
+          <>
+            <ResultCard value={noteText} />
+            <button
+              onClick={() => {
+                setNoteText('');
+              }}
+            >
+              Decode another note
+            </button>
+          </>
+        ) : isLoading ? (
+          <Spinner />
+        ) : (
+          <CipherForm onSubmit={getDecodedNote} />
+        )}
       </div>
     </section>
   );

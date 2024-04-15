@@ -1,2 +1,11 @@
 .NoteForm {
+  max-width: 100%;
+  width: 560px;
+  textarea {
+    width: 100%;
+  }
+  button {
+    display: block;
+    margin: 20px auto 0;
+  }
 }

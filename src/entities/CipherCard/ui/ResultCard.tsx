@@ -6,5 +6,5 @@ interface CipherCardProps {
 }
 
 export const ResultCard = ({ value }: CipherCardProps) => {
-  return <div className={cls.CipherCard}>{value || 'test text'}</div>;
+  return <div className={cls.CipherCard}>{value}</div>;
 };

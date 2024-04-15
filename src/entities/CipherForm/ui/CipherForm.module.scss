@@ -1,2 +1,12 @@
-.NoteForm {
+.CipherForm {
+  max-width: 100%;
+  width: 320px;
+  input {
+    width: 100%;
+    font-size: 18px;
+  }
+  button {
+    display: block;
+    margin: 20px auto 0;
+  }
 }

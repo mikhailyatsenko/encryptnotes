@@ -7,9 +7,9 @@ interface NoteFormProps {
 
 export const CipherForm = ({ onSubmit }: NoteFormProps) => {
   return (
-    <form className={cls.NoteForm} onSubmit={onSubmit}>
+    <form className={cls.CipherForm} onSubmit={onSubmit}>
       <input id="cipher" name="cipjer" required />
-      <button className="default-button">Decode</button>
+      <button>Decode</button>
     </form>
   );
 };
