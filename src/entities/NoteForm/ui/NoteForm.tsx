@@ -7,9 +7,11 @@ interface NoteFormProps {
 
 export const NoteForm = ({ onSubmit }: NoteFormProps) => {
   return (
-    <form className={cls.NoteForm} onSubmit={onSubmit}>
-      <textarea id="note" name="note" rows={7} required></textarea>
-      <button>Encrypt note</button>
-    </form>
+    <>
+      <form className={cls.NoteForm} onSubmit={onSubmit}>
+        <textarea id="note" name="note" rows={7} required></textarea>
+        <button>Encrypt note</button>
+      </form>
+    </>
   );
 };

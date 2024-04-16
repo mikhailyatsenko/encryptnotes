@@ -6,6 +6,7 @@ import { instance } from 'shared/api';
 import Spinner from 'shared/ui/Spinner/Spinner';
 
 interface BackendResponse {
+  result: string;
   cipher: string;
 }
 
@@ -16,6 +17,8 @@ interface NotePostData {
 export const CreateNote = () => {
   const [cipher, setCipher] = useState('');
   const [isLoading, setIsloading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [resultHeading, setResultHeading] = useState('');
 
   const createCipher = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,10 +30,23 @@ export const CreateNote = () => {
     instance
       .post<NotePostData, AxiosResponse<BackendResponse>>('/create', { note })
       .then((response) => {
-        setIsloading(false);
-        setCipher(response.data.cipher);
+        if (response.data.result === 'ok') {
+          setIsloading(false);
+          setResultHeading('The note is encrypted. Save your decryption key:');
+          setCipher(response.data.cipher);
+        } else {
+          setIsloading(false);
+          setIsError(true);
+          setResultHeading('Something wrong :(');
+          setCipher('Server error. Try later.');
+          console.error('Request error:', response.data.cipher);
+        }
       })
       .catch((error) => {
+        setIsloading(false);
+        setIsError(true);
+        setResultHeading('Something wrong :(');
+        setCipher('Server error. Try later');
         console.error('Request error:', error);
       });
   };
@@ -40,14 +56,17 @@ export const CreateNote = () => {
       <div className="container">
         {cipher ? (
           <>
-            <ResultCard value={cipher} />
-            <button
-              onClick={() => {
+            <ResultCard
+              heading={resultHeading}
+              isError={isError}
+              value={cipher}
+              textButton={'Encrypt another note'}
+              onButtonClick={() => {
                 setCipher('');
+                setResultHeading('');
+                setIsError(false);
               }}
-            >
-              Encript another note
-            </button>
+            />
           </>
         ) : isLoading ? (
           <Spinner />

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const INSTANCE_TIMEOUT = 10000;
+const INSTANCE_TIMEOUT = 1000;
 const INSTANCE_HEADER = {
   'Content-Type': 'application/json',
 };

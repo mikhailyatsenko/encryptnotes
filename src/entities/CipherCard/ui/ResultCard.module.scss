@@ -1,0 +1,21 @@
+.ResultCard {
+  text-align: center;
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .resultText {
+    background-color: rgba(133, 187, 250, 0.48);
+    border: 1px dotted #222;
+    padding: 12px 20px;
+    margin: 20px 0;
+    border-color: #768abb;
+    text-align: center;
+    color: #055160;
+    max-width: 560px;
+    font-weight: 700;
+    &.error {
+      background-color: rgba(255, 118, 118, 0.6);
+    }
+  }
+}
