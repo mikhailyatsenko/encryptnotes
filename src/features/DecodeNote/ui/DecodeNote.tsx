@@ -38,6 +38,7 @@ export const DecodeNote = () => {
           setNoteText('«' + response.data.note + '»');
         } else if (response.data.result === '404') {
           setIsloading(false);
+          setIsError(true);
           setResultHeading('Please check your cipher');
           setNoteText(response.data.note);
         } else {
