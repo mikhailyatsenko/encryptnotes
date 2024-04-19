@@ -16,15 +16,14 @@ export const ResultCard = ({ value, isError, heading, textButton, onButtonClick 
   const [toastMessage, setToastMessage] = useState('');
   const { ref } = useScramble({
     text: value,
-    // range: [65, 125],
+    range: [65, 120],
     speed: 1,
     tick: 1,
     step: 5,
-    scramble: 5,
+    scramble: 4,
     seed: 2,
     chance: 1,
-    overdrive: false,
-    overflow: false,
+    overflow: true,
   });
 
   return (
