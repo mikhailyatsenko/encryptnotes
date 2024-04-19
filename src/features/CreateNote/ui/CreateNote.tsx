@@ -51,29 +51,23 @@ export const CreateNote = () => {
       });
   };
 
-  return (
-    <section id="create">
-      <div className="container">
-        {cipher ? (
-          <>
-            <ResultCard
-              heading={resultHeading}
-              isError={isError}
-              value={cipher}
-              textButton={'Encrypt another note'}
-              onButtonClick={() => {
-                setCipher('');
-                setResultHeading('');
-                setIsError(false);
-              }}
-            />
-          </>
-        ) : isLoading ? (
-          <Spinner />
-        ) : (
-          <NoteForm onSubmit={createCipher} />
-        )}
-      </div>
-    </section>
+  return cipher ? (
+    <>
+      <ResultCard
+        heading={resultHeading}
+        isError={isError}
+        value={cipher}
+        textButton={'Encrypt another note'}
+        onButtonClick={() => {
+          setCipher('');
+          setResultHeading('');
+          setIsError(false);
+        }}
+      />
+    </>
+  ) : isLoading ? (
+    <Spinner />
+  ) : (
+    <NoteForm onSubmit={createCipher} />
   );
 };

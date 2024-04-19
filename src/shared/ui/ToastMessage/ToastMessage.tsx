@@ -25,16 +25,6 @@ const ToastMessage = ({ message, doAfterHide }: ToastMessageProps) => {
     }
   }, [doAfterHide, message]);
 
-  // useEffect(() => {
-  //   if (doAfterHide) {
-  //     const clearMessageTimer = setTimeout(doAfterHide, 2500);
-
-  //     return () => {
-  //       clearTimeout(clearMessageTimer);
-  //     };
-  //   }
-  // }, [doAfterHide]);
-
   return createPortal(
     <div className={`${cls.ToastMessage} ${isVisible ? cls.show : ''}`}>
       <div className="toast-content">{message}</div>

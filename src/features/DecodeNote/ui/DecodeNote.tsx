@@ -58,29 +58,23 @@ export const DecodeNote = () => {
       });
   };
 
-  return (
-    <section id="decode">
-      <div className="container">
-        {noteText ? (
-          <>
-            <ResultCard
-              isError={isError}
-              heading={resultHeading}
-              value={noteText}
-              textButton={'Decode another note'}
-              onButtonClick={() => {
-                setResultHeading('');
-                setNoteText('');
-                setIsError(false);
-              }}
-            />
-          </>
-        ) : isLoading ? (
-          <Spinner />
-        ) : (
-          <CipherForm onSubmit={getDecodedNote} />
-        )}
-      </div>
-    </section>
+  return noteText ? (
+    <>
+      <ResultCard
+        isError={isError}
+        heading={resultHeading}
+        value={noteText}
+        textButton={'Decode another note'}
+        onButtonClick={() => {
+          setResultHeading('');
+          setNoteText('');
+          setIsError(false);
+        }}
+      />
+    </>
+  ) : isLoading ? (
+    <Spinner />
+  ) : (
+    <CipherForm onSubmit={getDecodedNote} />
   );
 };

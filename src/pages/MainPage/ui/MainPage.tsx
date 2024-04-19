@@ -1,20 +1,34 @@
 import { NavLink } from 'react-router-dom';
+import { useScramble } from 'use-scramble';
+import cls from './MainPage.module.scss';
 
 export const MainPage = () => {
+  const { ref } = useScramble({
+    text: 'is a service for encrypting short notes',
+    speed: 0.2,
+    tick: 1,
+    step: 2,
+    scramble: 2,
+    seed: 0,
+  });
   return (
-    <section id="decode">
+    <section id="main">
       <div className="container">
-        <div className="col-lg-6 text-center">
-          <h1 className="fw-light">«Encrypt notes» is a service for encrypting short notes.</h1>
+        <div className={cls.mainWrapper}>
+          <h1>
+            <strong>«Encrypt notes»</strong>
+          </h1>
+          <h1 ref={ref} />
+          <div className={cls.buttonsWrapper}>
+            <button>
+              <NavLink to="/create">Create encrypted note</NavLink>
+            </button>
+
+            <button className="secondary">
+              <NavLink to="/decode">Decode note</NavLink>
+            </button>
+          </div>
         </div>
-
-        <button className="fw-light">
-          <NavLink to="/create">Create encrypted note</NavLink>
-        </button>
-
-        <button className="fw-light">
-          <NavLink to="/note">Decode note</NavLink>
-        </button>
       </div>
     </section>
   );
