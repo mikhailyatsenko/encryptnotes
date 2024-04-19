@@ -1,0 +1,22 @@
+.MainPage {
+  text-align: center;
+}
+
+.mainWrapper {
+  max-width: 720px;
+  h1 {
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+  }
+  .buttonsWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 24px;
+    @media (max-width: 719px) {
+      gap: 20px;
+    }
+  }
+}

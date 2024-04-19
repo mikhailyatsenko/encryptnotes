@@ -1,0 +1,73 @@
+.ResultCard {
+  text-align: center;
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .resultGroup {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    .resultText {
+      position: relative;
+      background-color: #85bbfa;
+      border: 1px dotted #222;
+      padding: 16px 32px;
+      border-color: #768abb;
+      text-align: center;
+      color: #055160;
+      width: fit-content;
+      max-width: 600px;
+      min-width: 280px;
+      margin: 16px auto 0;
+      font-weight: 700;
+      .invisibleStaticText {
+        opacity: 0;
+      }
+      .visibleAnimatedText {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 600px;
+        min-width: 280px;
+        padding: 16px 32px;
+      }
+      &.error {
+        background-color: rgba(255, 118, 118, 0.6);
+      }
+    }
+    .copy {
+      position: absolute;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 12px;
+      right: 16px;
+      color: #696969;
+
+      &:hover {
+        transform: scale(0.98);
+        color: #222;
+        &::after {
+          background-image: url('../../../shared/assets/icons/copyIconHovered.svg');
+        }
+      }
+      &:active {
+        transition: none;
+        transform: scale(0.97);
+      }
+      &::after {
+        color: inherit;
+        position: absolute;
+        content: '';
+        height: 14px;
+        width: 14px;
+        background-image: url('../../../shared/assets/icons/copyIcon.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  button {
+    margin-top: 26px;
+  }
+}
