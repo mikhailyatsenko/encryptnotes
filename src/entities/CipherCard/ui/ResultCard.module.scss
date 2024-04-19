@@ -42,17 +42,21 @@
       font-weight: 600;
       font-size: 12px;
       right: 16px;
-      color: #222;
+      color: #696969;
 
       &:hover {
         transform: scale(0.98);
-        color: #000;
+        color: #222;
+        &::after {
+          background-image: url('../../../shared/assets/icons/copyIconHovered.svg');
+        }
       }
       &:active {
         transition: none;
         transform: scale(0.97);
       }
       &::after {
+        color: inherit;
         position: absolute;
         content: '';
         height: 14px;
