@@ -46,10 +46,7 @@
 
       &:hover {
         transform: scale(0.98);
-        color: #222;
-        &::after {
-          background-image: url('../../../shared/assets/icons/copyIconHovered.svg');
-        }
+        filter: brightness(0.3);
       }
       &:active {
         transition: none;

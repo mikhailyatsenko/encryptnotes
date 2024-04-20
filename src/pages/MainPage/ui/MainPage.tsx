@@ -16,7 +16,7 @@ export const MainPage = () => {
       <div className="container">
         <div className={cls.mainWrapper}>
           <h1>
-            <strong>«Encrypt notes»</strong>
+            <strong className={cls.name}>«Encrypt notes»</strong>
           </h1>
           <h1 ref={ref} />
           <div className={cls.buttonsWrapper}>
