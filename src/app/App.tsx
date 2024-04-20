@@ -5,18 +5,19 @@ import { Footer } from 'widgets/Footer';
 // import Spinner from 'shared/ui/Spinner/Spinner';
 
 const App = () => {
-  <>
-    <nav>
-      <Navbar />
-    </nav>
-    <main>
-      <AppRouter />
-    </main>
-    <footer>
-      <Footer />
-    </footer>
-  </>;
-  // );
+  return (
+    <>
+      <nav>
+        <Navbar />
+      </nav>
+      <main>
+        <AppRouter />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </>
+  );
 };
 
 export default App;
