@@ -8,7 +8,7 @@ interface NoteFormProps {
 export const CipherForm = ({ onSubmit }: NoteFormProps) => {
   return (
     <form className={cls.CipherForm} onSubmit={onSubmit}>
-      <input id="cipher" name="cipjer" required />
+      <input id="cipher" name="cipjer" autoComplete="off" required />
       <button>Decode</button>
     </form>
   );
