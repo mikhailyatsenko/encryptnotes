@@ -8,12 +8,14 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    window.onload = () => {
-      setLoading(false); // Когда все загружено, скрываем прелоадер
+    const handleLoad = () => {
+      setLoading(false);
     };
 
+    window.addEventListener('load', handleLoad);
+
     return () => {
-      window.onload = null; // Очистка обработчика при размонтировании компонента
+      window.removeEventListener('load', handleLoad);
     };
   }, []);
 
