@@ -8,9 +8,12 @@ export const MainPage = () => {
     range: [92, 130],
     speed: 0.2,
     step: 2,
-    scramble: 8,
+    scramble: 2,
     seed: 5,
+    overflow: true,
+    overdrive: true,
   });
+
   return (
     <section id="main">
       <div className="container">
