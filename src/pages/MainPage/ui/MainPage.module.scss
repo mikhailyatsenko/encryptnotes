@@ -4,8 +4,13 @@
 
 .mainWrapper {
   max-width: 720px;
-  .name {
+  .title {
     animation: ease-out 1s fadeIn;
+    position: relative;
+    .subtilte {
+      position: absolute;
+      animation: ease-out 1s fadeInSecondary;
+    }
   }
   h1 {
     font-size: 36px;
@@ -19,17 +24,31 @@
     flex-wrap: wrap;
     gap: 40px;
     padding-top: 24px;
+    animation: ease-out 1s fadeIn;
     @media (max-width: 719px) {
       gap: 20px;
     }
   }
 }
 
+.invisible {
+  opacity: 0;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
-  30% {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSecondary {
+  0% {
+    opacity: 0;
+  }
+  60% {
     opacity: 0;
   }
   100% {

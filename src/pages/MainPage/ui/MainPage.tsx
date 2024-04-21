@@ -5,20 +5,24 @@ import cls from './MainPage.module.scss';
 export const MainPage = () => {
   const { ref } = useScramble({
     text: 'is a service for encrypting short notes',
+    range: [92, 130],
     speed: 0.2,
-    tick: 1,
     step: 2,
-    scramble: 2,
-    seed: 0,
+    scramble: 8,
+    seed: 5,
   });
   return (
     <section id="main">
       <div className="container">
         <div className={cls.mainWrapper}>
-          <h1>
-            <strong className={cls.name}>«Encrypt notes»</strong>
-          </h1>
-          <h1 ref={ref} />
+          <div className={cls.title}>
+            <h1>
+              <strong>«Encrypt notes»</strong>
+            </h1>
+            <h1 className={cls.subtilte} ref={ref} />
+            <h1 className={cls.invisible}>is a service for encrypting short notes</h1>
+          </div>
+
           <div className={cls.buttonsWrapper}>
             <button>
               <NavLink to="/create">Create encrypted note</NavLink>
