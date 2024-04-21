@@ -8,6 +8,7 @@
     animation: ease-out 1s fadeIn;
     position: relative;
     overflow: hidden;
+    padding: 4px;
     .subtilte {
       position: absolute;
       animation: ease-out 1s fadeInSecondary;
@@ -24,7 +25,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
-    padding-top: 24px;
+    padding-top: 20px;
     animation: ease-out 1s fadeIn;
     @media (max-width: 719px) {
       gap: 20px;
