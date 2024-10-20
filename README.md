@@ -10,6 +10,8 @@ This is a web application designed for encrypting short notes.
 - Axios
 - SCSS
 
+ You can access the backend [here](https://github.com/mikhailyatsenko/encryptnotes_backend).
+
 ## Architecture
 The application follows the "Feature-Sliced Design" methodology. For more information on Feature-Sliced Design, visit [feature-sliced.design](https://feature-sliced.design/).
 
